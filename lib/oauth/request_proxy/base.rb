@@ -140,7 +140,8 @@ module OAuth::RequestProxy
       header_params_str = oauth_parameters.map { |k,v| "#{k}=\"#{escape(v)}\"" }.join(', ')
 
       realm = "realm=\"#{options[:realm]}\", " if options[:realm]
-      "OAuth #{realm}#{header_params_str}"
+      puts "header #######"
+      p "OAuth #{realm}#{header_params_str}"
     end
 
     def query_string_blank?
