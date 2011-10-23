@@ -62,6 +62,8 @@ module OAuth::Signature
     end
 
     def signature
+      puts "digest #####"
+      p digest
       Base64.encode64(digest).chomp.gsub(/\n/,'')
     end
 
@@ -74,7 +76,8 @@ module OAuth::Signature
     end
 
     def signature_base_string
-      request.signature_base_string
+      puts "sig base stt ########"
+      p request.signature_base_string
     end
 
     def body_hash
@@ -100,7 +103,8 @@ module OAuth::Signature
     end
 
     def secret
-      "#{escape(consumer_secret)}&#{escape(token_secret)}"
+      puts "secret ########"
+      p "#{escape(consumer_secret)}&#{escape(token_secret)}"
     end
 
     def digest
