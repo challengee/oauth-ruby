@@ -111,7 +111,8 @@ module OAuth::RequestProxy
     # See 9.1 in specs
     def signature_base_string
       base = [method, normalized_uri, normalized_parameters]
-      base.map { |v| escape(v) }.join("&")
+      puts "base ###############"
+      p base.map { |v| escape(v) }.join("&")
     end
 
     # Has this request been signed yet?
